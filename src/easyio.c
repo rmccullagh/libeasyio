@@ -56,8 +56,7 @@ LIBEASY_IO_API char* file_get_contents(const char* path)
 	
 	struct stat buffer;
 	int 	    status;
-	void*	    content;
-	char*	    ret;
+	char* content;
 	FILE*	    fp;
 	size_t      bytes_read;
 
@@ -80,7 +79,7 @@ LIBEASY_IO_API char* file_get_contents(const char* path)
 		return NULL;
 	}
 
-	fp = fopen(path, "r");
+	fp = fopen(path, "rb");
 
 	if(!fp) {
 		debug_log("cannot open file");
@@ -91,11 +90,9 @@ LIBEASY_IO_API char* file_get_contents(const char* path)
 
 	fclose(fp);
 
-	ret = (char *)content;
+	content[buffer.st_size] = '\0';
 
-	ret[buffer.st_size] = '\0';
-
-	return ret;
+	return content;
 }	
 
 #ifdef __cplusplus

@@ -2,6 +2,8 @@ AC_INIT([libeasyio], [1.0.0], [bug-automake@gnu.org])
 AM_INIT_AUTOMAKE([foreign])
 LT_INIT([disable-static])
 AC_SUBST([LIBTOOL_DEPS])
+LIB_EASY_IO_VERSION=1:0:0
+AC_SUBST(LIB_EASY_IO_VERSION)
 AC_PROG_CC
 AC_PROG_CC_C99
 AC_PROG_INSTALL
@@ -31,6 +33,7 @@ AC_CHECK_MEMBER([struct stat.st_size], [],
 AC_CONFIG_FILES([
  Makefile
  src/Makefile
+ src/configure.h
  test/Makefile
 ])
 AC_OUTPUT

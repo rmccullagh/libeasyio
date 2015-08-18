@@ -33,3 +33,4 @@ test/file_get_contents
 *.log
 *.trs
 test-driver
+configure.h

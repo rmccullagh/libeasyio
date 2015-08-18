@@ -1,0 +1,6 @@
+#ifndef __LIB_EASY_IO_CONFIG_H
+#define __LIB_EASY_IO_CONFIG_H
+
+#define LIB_EASY_IO_VERSION "@VERSION@"
+
+#endif

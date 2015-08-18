@@ -20,6 +20,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <easyio.h>
+#include <configure.h>
 
 #define REQUIRED(p) do { \
 	if(!p) { \
@@ -94,6 +95,12 @@ LIBEASY_IO_API char* file_get_contents(const char* path)
 
 	return content;
 }	
+
+LIBEASY_IO_API const char* easy_io_version(void)
+{
+	return LIB_EASY_IO_VERSION;
+}
+
 
 #ifdef __cplusplus
 }

@@ -62,6 +62,13 @@ extern "C" {
  */
 extern LIBEASY_IO_API char* file_get_contents(const char* path);
 
+/**
+ * @brief Get the library version string
+ *
+ * @return string
+ */
+extern LIBEASY_IO_API const char* easy_io_version(void);
+
 #ifdef __cplusplus
 }
 #endif

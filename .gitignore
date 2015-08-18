@@ -28,3 +28,8 @@ stamp-h1
 *~
 libobject-*.tar.gz
 .*.swp
+test/file_get_contents.c
+test/file_get_contents
+*.log
+*.trs
+test-driver

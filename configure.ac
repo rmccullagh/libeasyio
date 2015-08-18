@@ -31,5 +31,6 @@ AC_CHECK_MEMBER([struct stat.st_size], [],
 AC_CONFIG_FILES([
  Makefile
  src/Makefile
+ test/Makefile
 ])
 AC_OUTPUT

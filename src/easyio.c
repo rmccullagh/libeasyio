@@ -73,6 +73,9 @@ LIBEASY_IO_API char* file_get_contents(const char* path)
 		return NULL;
 	}
 
+	if(buffer.st_size + 1 < buffer.st_size)
+		return NULL;
+
 	content = malloc(buffer.st_size + 1);
 	
 	if(!content) {

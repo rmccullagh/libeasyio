@@ -51,7 +51,7 @@ static inline void debug_log(const char* s)
  *
  * Returns: a pointer to the start of the buffer, or NULL
  */
-LIBEASY_IO_API char* file_get_contents(const char* path)
+LIBEASY_IO_API char* easy_io_get_contents(const char* path)
 {
 	REQUIRED(path);
 	

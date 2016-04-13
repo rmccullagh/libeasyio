@@ -60,7 +60,7 @@ extern "C" {
  * @param path the path to the file
  * @return pointer to an unsigned char, or NULL
  */
-extern LIBEASY_IO_API char* file_get_contents(const char* path);
+extern LIBEASY_IO_API char* easy_io_get_contents(const char* path);
 
 /**
  * @brief Get the library version string
@@ -68,6 +68,13 @@ extern LIBEASY_IO_API char* file_get_contents(const char* path);
  * @return string
  */
 extern LIBEASY_IO_API const char* easy_io_version(void);
+
+/**
+ * backwards compatible macro, people should undef it
+ * if it causes issues and call easy_io_get_contents directly
+ */
+#define file_get_contents(path) easy_io_get_contents(path)
+
 
 #ifdef __cplusplus
 }

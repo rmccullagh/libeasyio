@@ -9,5 +9,5 @@ One function to read a regular file into a char array.
  * @param path the path to the file
  * @return pointer to an unsigned char, or NULL
  */
-extern LIBEASY_IO_API char* file_get_contents(const char* path);
+extern LIBEASY_IO_API char* easy_io_get_contents(const char* path);
 ```

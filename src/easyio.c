@@ -33,15 +33,7 @@
 extern "C" {
 #endif
 
-static inline void debug_log(const char* s)
-{
-	#if LIBEASY_IO_DEBUG
-		fprintf(stderr, "%s:%d:%s: %s\n",
-			__FILE__, __LINE__, __func__, s);
-	#endif
-}
-
-/**
+	/**
  * file_get_contents:
  * @path: the path to use to open the file
  *
@@ -64,12 +56,10 @@ LIBEASY_IO_API char* easy_io_get_contents(const char* path)
 	status = stat(path, &buffer);
 
 	if(status == -1) {
-		debug_log("cannot stat file");
 		return NULL;
 	}
 
 	if(!S_ISREG(buffer.st_mode)) {
-		debug_log("not a regular file");
 		return NULL;
 	}
 
@@ -79,14 +69,12 @@ LIBEASY_IO_API char* easy_io_get_contents(const char* path)
 	content = malloc(buffer.st_size + 1);
 	
 	if(!content) {
-		debug_log("malloc failed");
 		return NULL;
 	}
 
 	fp = fopen(path, "rb");
 
 	if(!fp) {
-		debug_log("cannot open file");
 		return NULL;
 	}
 	

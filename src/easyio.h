@@ -22,10 +22,6 @@
 #include <config.h>
 #endif
 
-#ifndef LIB_EASY_IO_VERSION
-#define LIB_EASY_IO_VERSION "1.0.1"
-#endif
-
 #ifdef HAVE_LIBEASY_IO_DEBUG
   #define LIBEASY_IO_DEBUG 1
 #else
@@ -53,12 +49,6 @@
 #else
   #define LIBEASY_IO_API LIBEASY_IO_HELPER_DLL_IMPORT
 #endif
-
-/* Borrowed from libcurl */
-#if !defined(S_ISREG) && defined(S_IFMT) && defined(S_IFREG)
-#define S_ISREG(m) (((m) & S_IFMT) == S_IFREG)
-#endif
-
 
 #ifdef __cplusplus
 extern "C" {

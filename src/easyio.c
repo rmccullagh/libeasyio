@@ -20,7 +20,10 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <easyio.h>
+
+#ifdef HAVE_CONFIG_H
 #include <configure.h>
+#endif
 
 #define REQUIRED(p) do { \
 	if(!p) { \
